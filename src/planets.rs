@@ -6,20 +6,21 @@ pub trait Planet {
     }
 }
 
-pub struct Mercury;
-pub struct Venus;
-pub struct Earth;
-pub struct Mars;
-pub struct Jupiter;
-pub struct Saturn;
-pub struct Uranus;
-pub struct Neptune;
+macro_rules! struct_planets {
+    (names $($p:ident), +) => {
+        $(
+            pub struct $p;
+        )*
+    }
+}
 
-impl Planet for Mercury {}
-impl Planet for Venus {}
-impl Planet for Earth {}
-impl Planet for Mars {}
-impl Planet for Jupiter {}
-impl Planet for Saturn {}
-impl Planet for Uranus {}
-impl Planet for Neptune {}
+macro_rules! impl_Planet {
+    (for $($p:ty), +) => {
+        $(
+            impl Planet for $p {}
+        )*
+    }
+}
+
+struct_planets!(names Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune);
+impl_Planet!(for Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune);
