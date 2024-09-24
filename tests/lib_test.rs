@@ -1,4 +1,5 @@
 use solar_age_calculator::*;
+
 fn assert_in_delta(expected: f64, actual: f64) {
     let diff: f64 = (expected - actual).abs();
     let delta: f64 = 0.01;
@@ -15,7 +16,6 @@ fn age_on_earth() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_mercury() {
     let seconds = 2_134_835_688;
     let duration = Duration::from(seconds);
@@ -24,7 +24,6 @@ fn age_on_mercury() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_venus() {
     let seconds = 189_839_836;
     let duration = Duration::from(seconds);
@@ -33,7 +32,6 @@ fn age_on_venus() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_mars() {
     let seconds = 2_129_871_239;
     let duration = Duration::from(seconds);
@@ -42,7 +40,6 @@ fn age_on_mars() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_jupiter() {
     let seconds = 901_876_382;
     let duration = Duration::from(seconds);
@@ -51,7 +48,6 @@ fn age_on_jupiter() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_saturn() {
     let seconds = 2_000_000_000;
     let duration = Duration::from(seconds);
@@ -60,7 +56,6 @@ fn age_on_saturn() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_uranus() {
     let seconds = 1_210_123_456;
     let duration = Duration::from(seconds);
@@ -69,7 +64,6 @@ fn age_on_uranus() {
     assert_in_delta(expected, output);
 }
 #[test]
-#[ignore]
 fn age_on_neptune() {
     let seconds = 1_821_023_456;
     let duration = Duration::from(seconds);
